@@ -1,6 +1,7 @@
 using System.Net.Mail;
+using HRMS.Domain.Common.Exceptions;
 
-namespace HRMS.Domain.Employees;
+namespace HRMS.Domain.ValueObjects;
 
 public sealed record Email
 {
@@ -27,7 +28,7 @@ public sealed record Email
             _ = new MailAddress(email);
             return true;
         }
-        catch
+        catch (FormatException)
         {
             return false;
         }

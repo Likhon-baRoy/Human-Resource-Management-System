@@ -1,6 +1,4 @@
-using HRMS.Domain.Common.Exceptions;
-
-namespace HRMS.Domain.Employees;
+namespace HRMS.Domain.Common.Exceptions;
 
 public sealed class InvalidEmailException : DomainException
 {
