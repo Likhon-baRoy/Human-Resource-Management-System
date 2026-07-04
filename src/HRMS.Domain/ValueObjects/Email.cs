@@ -34,5 +34,10 @@ public sealed record Email
         }
     }
 
+    private static string Normalize(string value)
+    {
+
+    }
+
     public override string ToString() => Value;
 }
