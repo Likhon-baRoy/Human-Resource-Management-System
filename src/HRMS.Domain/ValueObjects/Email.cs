@@ -11,9 +11,9 @@ public sealed record Email
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(value);
 
-        var normalized = value.Trim().ToLowerInvariant();
+        var normalized = Normalize(value);
 
-        if (!IsValid(normalized))
+        if (!IsValidFormat(normalized))
         {
             throw new InvalidEmailException(value);
         }
@@ -21,7 +21,7 @@ public sealed record Email
         Value = normalized;
     }
 
-    private static bool IsValid(string email)
+    private static bool IsValidFormat(string email)
     {
         try
         {
@@ -36,7 +36,7 @@ public sealed record Email
 
     private static string Normalize(string value)
     {
-
+        return value.Trim().ToLowerInvariant();
     }
 
     public override string ToString() => Value;
