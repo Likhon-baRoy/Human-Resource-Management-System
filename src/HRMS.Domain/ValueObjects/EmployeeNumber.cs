@@ -54,5 +54,12 @@ public sealed record EmployeeNumber
         }
     }
 
+    public static EmployeeNumber FromSequence(long sequence)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(sequence);
+
+        return new EmployeeNumber($"{Prefix}{sequence.ToString($"D{NumericLength}")}");
+    }
+
     public override string ToString() => Value;
 }

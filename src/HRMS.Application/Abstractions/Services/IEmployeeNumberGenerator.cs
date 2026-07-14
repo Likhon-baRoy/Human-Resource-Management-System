@@ -1,6 +1,6 @@
 using HRMS.Domain.ValueObjects;
 
-namespace HRMS.Domain.Services;
+namespace HRMS.Application.Abstractions.Services;
 
 public interface IEmployeeNumberGenerator
 {
