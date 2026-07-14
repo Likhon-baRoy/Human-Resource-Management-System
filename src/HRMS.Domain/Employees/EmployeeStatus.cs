@@ -8,20 +8,20 @@ public enum EmployeeStatus
     /// <summary>
     /// Employee has been created but is not yet active.
     /// </summary>
-    Pending,
+    Pending = 1,
 
     /// <summary>
     /// Employee is currently employed and active.
     /// </summary>
-    Active,
+    Active = 2,
 
     /// <summary>
     /// Employee is still employed but temporarily inactive according to company policy.
     /// </summary>
-    Inactive,
+    Inactive = 3,
 
     /// <summary>
     /// Employment has ended.
     /// </summary>
-    Terminated
+    Terminated = 4
 }

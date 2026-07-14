@@ -52,6 +52,15 @@ public sealed class Employee : AuditableEntity
         HireDate = hireDate;
     }
 
+    public void ChangeEmail(Email newEmail)
+    {
+        ArgumentNullException.ThrowIfNull(newEmail);
+
+        EnsureEmailIsDifferent(newEmail);
+
+        Email = newEmail;
+    }
+
     private void EnsureCanTransitionToActive()
     {
         if (Status != EmployeeStatus.Pending && Status != EmployeeStatus.Inactive)
@@ -72,8 +81,12 @@ public sealed class Employee : AuditableEntity
         }
     }
 
-    private void ChangeStatus(EmployeeStatus newStatus)
+    private void EnsureEmailIsDifferent(Email email)
     {
-        Status = newStatus;
+        if (Email == email)
+        {
+            throw new InvalidOperationException(
+                "The new email address must be different from the current email address.");
+        }
     }
 }
