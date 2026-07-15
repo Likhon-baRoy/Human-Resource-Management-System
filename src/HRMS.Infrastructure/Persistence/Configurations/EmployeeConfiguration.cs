@@ -37,6 +37,7 @@ public sealed class EmployeeConfiguration
 
         builder.Property(e => e.Status)
             .HasConversion<string>()
+            .HasMaxLength(20)
             .IsRequired();
 
         builder.HasIndex(e => e.EmployeeNumber)

@@ -1,6 +1,7 @@
 using HRMS.Application.Abstractions.Persistence;
 using HRMS.Domain.Employees;
 using HRMS.Domain.ValueObjects;
+using Microsoft.EntityFrameworkCore;
 
 namespace HRMS.Infrastructure.Persistence.Repositories;
 
