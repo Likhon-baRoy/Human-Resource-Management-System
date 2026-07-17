@@ -20,7 +20,9 @@ public sealed class EmployeeNumberGenerator : IEmployeeNumberGenerator
     {
         var sequence = await _dbContext.Database
             .SqlQuery<long>(
-                $"""SELECT nextval('hr.employee_number_sequence');""")
+                $"""
+                SELECT nextval('hr.employee_number_sequence') AS "Value"
+                """)
             .SingleAsync(cancellationToken);
 
         return EmployeeNumber.FromSequence(sequence);

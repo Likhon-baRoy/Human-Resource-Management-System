@@ -1,13 +1,15 @@
 using HRMS.Application.Abstractions.Persistence;
 using HRMS.Application.Abstractions.Services;
 using HRMS.Application.Common;
-using HRMS.Application.Employees.Errors;
 using HRMS.Domain.Employees;
 using HRMS.Domain.ValueObjects;
 
 namespace HRMS.Application.Employees.Commands.RegisterEmployee;
 
 public sealed class RegisterEmployeeCommandHandler
+    : ICommandHandler<
+        RegisterEmployeeCommand,
+        RegisterEmployeeResult>
 {
     private readonly IEmployeeRepository _employeeRepository;
     private readonly IEmployeeNumberGenerator _employeeNumberGenerator;

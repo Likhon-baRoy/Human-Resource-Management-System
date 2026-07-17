@@ -1,3 +1,5 @@
+using HRMS.Domain.Common;
+
 namespace HRMS.Application.Common;
 
 public abstract class Result

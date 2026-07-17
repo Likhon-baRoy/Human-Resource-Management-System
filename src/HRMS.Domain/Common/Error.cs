@@ -1,4 +1,4 @@
-namespace HRMS.Application.Common;
+namespace HRMS.Domain.Common;
 
 public sealed record Error
 {
